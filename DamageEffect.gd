@@ -1,4 +1,3 @@
-@tool
 extends Effect
 class_name DamageEffect
 
