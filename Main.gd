@@ -4,18 +4,20 @@ var targeting_api: TargetingApi = TargetingApi.new()
 
 @onready var button := $Button
 
-var effect: Effect
+var effect: Effect = DamageEffect.new()
+var targeting := false
 
 func _ready() -> void:
 	button.pressed.connect(_on_card_toggled)
-	effect = DamageEffect.new()
 
 func _on_card_toggled() -> void:
-	if targeting_api and targeting_api.is_targeting():
+	if targeting:
 		targeting_api.cancel_targeting()
+		targeting = false
 		return
 
 	button.text = "Playing..."
+	targeting = true
 
 	@warning_ignore("redundant_await")
 	var res_v := await effect.play(targeting_api)
