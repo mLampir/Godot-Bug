@@ -11,8 +11,16 @@ offset_right = 551.0
 offset_bottom = 326.0
 script = ExtResource("1_u8cu3")
 
-[node name="Button" type="Button" parent="."]
+[node name="AwaitButton" type="Button" parent="."]
 layout_mode = 0
 offset_right = 41.0
 offset_bottom = 31.0
-text = "Test"
+text = "Wait for Signal to return bool"
+
+[node name="ReleaseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 109.0
+offset_bottom = 78.0
+text = "Release bool"
